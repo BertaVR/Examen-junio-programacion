@@ -89,7 +89,7 @@ public class ServiceTest {
 	 * Si no existe, devuelve un objeto usuaria con sus propiedades
      * y valores como se indica en los casos test.
 	 */
-	/*@Test
+@Test
 	public void test_carga_usuaria() {
 		Assertions.assertThat(servicio).isNotNull();
 		Usuaria elfo = servicio.cargaUsuaria("Doobey");
