@@ -1,5 +1,7 @@
 package edu.pingpong.examen;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -39,6 +41,18 @@ public class ServiceOlli {
         }
     }
 
+    @Transactional
+    public List <Orden> cargaOrden(String name){
+        Optional<Usuaria> persona = Usuaria.find("nombre", name).firstResultOptional();
+        if (persona.isPresent()) {
+            Usuaria usuaria = persona.get();
+         return Orden.list("user", usuaria);}
+
+         else {
+            return  new ArrayList<Orden>();
+
+        }
+    }
 }
 
 

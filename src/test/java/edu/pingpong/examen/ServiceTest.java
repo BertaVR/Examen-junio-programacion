@@ -139,7 +139,7 @@ public class ServiceTest {
      * Si no existe, devuelve una lista vacía.
 	 */
 
-    /*@Test
+    @Test
 	public void test_carga_orden() {
         Assertions.assertThat(servicio).isNotNull();
 		List<Orden> ordenes = servicio.cargaOrden("Hermione");
