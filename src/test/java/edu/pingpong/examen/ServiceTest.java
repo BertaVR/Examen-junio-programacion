@@ -114,7 +114,7 @@ public class ServiceTest {
      * y valores como se indica en los casos test.
 	 */
 
-    /*@Test
+    @Test
 	public void test_carga_item() {
         Assertions.assertThat(servicio).isNotNull();
 		Item item = servicio.cargaItem("Elixir of the Mongoose");

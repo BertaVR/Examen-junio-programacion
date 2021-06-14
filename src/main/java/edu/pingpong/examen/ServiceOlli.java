@@ -24,6 +24,21 @@ public class ServiceOlli {
         }
     }
 
+    @Transactional
+    public Item cargaItem(String name){
+        Optional<Item> objeto = Item.find("nombre", name).firstResultOptional();
+        if (objeto.isPresent()) {
+           Item item = objeto.get();
+           return item;
+
+        } else {
+            Item item = new Item("", 0, "");
+            item.persist();
+            return item;
+
+        }
+    }
+
 }
 
 
