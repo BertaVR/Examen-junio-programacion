@@ -22,8 +22,8 @@ public class ServiceTest {
     @PersistenceContext
     EntityManager em;
 
-    //@Inject
-    //ServiceOlli servicio;
+    @Inject
+    ServiceOlli servicio;
 
     /**
 	 * MAPPINGS de la entidades a las tablas de la BBDD.
@@ -78,7 +78,7 @@ public class ServiceTest {
 	 * que es una dependencia Quarkus 
 	 */
 
-    /*@Test
+    @Test
 	public void test_inyeccion_servicio() {
 		Assertions.assertThat(servicio).isNotNull();
 	}
