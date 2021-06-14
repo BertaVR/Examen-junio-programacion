@@ -42,16 +42,27 @@ public class ServiceOlli {
         }
     }
 
-    @Transactional
     public List <Orden> cargaOrden(String name){
         List<Orden> listaordnees = Orden.listAll();
 
         return listaordnees.stream().filter(e->e.user.nombre.equals(name)).collect(Collectors.toList());
     }
 
-    //public Orden comanda(String nombre_usuaria, String nombre_item){
+    public Orden comanda(String nombre_usuaria, String nombre_item){
+        Optional<Usuaria> persona = Usuaria.findByIdOptional( nombre_usuaria);
 
-    //}
+        Optional<Item> objeto = Item.findByIdOptional(nombre_item);
+
+        if(persona.isPresent() && objeto.isPresent()){
+            Orden orden = new Orden (persona.get(), objeto.get());
+            orden.persist(); 
+            return orden;
+            }
+        else{
+            return null;
+        }
+
+    }
 }
 
 
