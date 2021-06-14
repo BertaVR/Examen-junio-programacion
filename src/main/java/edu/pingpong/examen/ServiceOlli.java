@@ -55,28 +55,32 @@ public class ServiceOlli {
 
         Optional<Item> objeto = Item.findByIdOptional(nombre_item);
 
-        if (persona.isPresent() && objeto.isPresent()) {
+refa        if (persona.isPresent() && objeto.isPresent() ) {
             Orden orden = new Orden(persona.get(), objeto.get());
 
             if (orden.user.destreza >= orden.item.quality) {
                 orden.persist();
-                return orden;
-            }
-            return null;
 
-        } else {
-            return null;
-        }
-        
+                return orden;
+            }}
+
+
+            return null;  
 
     }
     public List <Orden> comandaMultiple(String nombre_usuaria,List<String> list){
+        Optional<Usuaria> persona = Usuaria.findByIdOptional(nombre_usuaria);
+        if (persona.isPresent()){
 
         list.forEach(c->comanda(nombre_usuaria, c));
-        
         return cargaOrden(nombre_usuaria);
 
-    }
+        }else{
+          return  new ArrayList<Orden>();
+
+        }
+}
+
 
     
 }
