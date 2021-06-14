@@ -38,6 +38,7 @@ public class ServiceOlli {
         } else {
             Item item = new Item("", 0, "");
             item.persist();
+            item.delete();
             return item;
 
         }
