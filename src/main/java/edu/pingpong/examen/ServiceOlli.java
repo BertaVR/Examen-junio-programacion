@@ -22,6 +22,7 @@ public class ServiceOlli {
         } else {
             Usuaria usuaria = new Usuaria("", 0);
             usuaria.persist();
+            usuaria.delete();
             return usuaria;
 
         }
@@ -40,6 +41,7 @@ public class ServiceOlli {
             return item;
 
         }
+        
     }
 
     public List <Orden> cargaOrden(String name){

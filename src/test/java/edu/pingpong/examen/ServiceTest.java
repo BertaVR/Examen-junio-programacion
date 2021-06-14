@@ -191,7 +191,7 @@ public class ServiceTest {
 	 * para que NO permita generar pedidos de productos
 	 * si no existe la usuaria en la base de datos.
 	 */
-	/*@Test
+	@Test
 	public void test_comanda_no_user() {
 		Assertions.assertThat(servicio).isNotNull();
 		Orden orden = servicio.comanda("Severus", "+5 Dexterity Vest");
