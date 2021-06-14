@@ -16,14 +16,15 @@ public class ServiceOlli {
            Usuaria usuaria = persona.get();
            return usuaria;
 
-        } /*else {
-            Usuaria usuaria = null;
-           return usuaria;
+        } else {
+            Usuaria usuaria = new Usuaria("", 0);
+            usuaria.persist();
+            return usuaria;
 
         }
-    }*/
-        return null;
+    }
+
 }
-}
+
 
 
