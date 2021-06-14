@@ -67,6 +67,16 @@ public class ServiceOlli {
         } else {
             return null;
         }
+        
 
     }
+    public List <Orden> comandaMultiple(String nombre_usuaria,List<String> list){
+
+        list.forEach(c->comanda(nombre_usuaria, c));
+        
+        return cargaOrden(nombre_usuaria);
+
+    }
+
+    
 }

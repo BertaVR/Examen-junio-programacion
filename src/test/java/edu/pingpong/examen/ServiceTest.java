@@ -253,7 +253,7 @@ public class ServiceTest {
 	 * No se ordenan items que no existan en la base de datos.
 	 */
 
-	/*@Test
+	@Test
 	@Transactional
 	public void test_ordenar_multiples_items_ok() {
 		Assertions.assertThat(servicio).isNotNull();
@@ -289,5 +289,5 @@ public class ServiceTest {
 		Assertions.assertThat(servicio).isNotNull();
 		List<Orden> ordenes = servicio.comandaMultiple("Hermione", Arrays.asList("Guardapelo Salazar", "Reliquias de la Muerte"));
 		Assertions.assertThat(ordenes).isEmpty();
-	}*/
+	}
 	}
