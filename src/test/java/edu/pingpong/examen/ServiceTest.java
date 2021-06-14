@@ -63,7 +63,7 @@ public class ServiceTest {
 	 * de la clase Orden a la tabla t_ordenes
 	 * El id de esta clase ha de seguir una estrategia Identity
 	 */
-	/*@Test 
+	@Test 
 	public void test_mapping_orden() {
 		Orden pedido = em.find(Orden.class, 1L);
         Assertions.assertThat(pedido).isNotNull();
