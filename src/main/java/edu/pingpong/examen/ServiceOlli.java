@@ -3,6 +3,7 @@ package edu.pingpong.examen;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
@@ -43,16 +44,14 @@ public class ServiceOlli {
 
     @Transactional
     public List <Orden> cargaOrden(String name){
-        Optional<Usuaria> persona = Usuaria.find("nombre", name).firstResultOptional();
-        if (persona.isPresent()) {
-            Usuaria usuaria = persona.get();
-         return Orden.list("user", usuaria);}
+        List<Orden> listaordnees = Orden.listAll();
 
-         else {
-            return  new ArrayList<Orden>();
-
-        }
+        return listaordnees.stream().filter(e->e.user.nombre.equals(name)).collect(Collectors.toList());
     }
+
+    //public Orden comanda(String nombre_usuaria, String nombre_item){
+
+    //}
 }
 
 

@@ -166,7 +166,7 @@ public class ServiceTest {
 	 * 
      * El metodo devuelve la orden de tipo Orden creada.
 	 */
-	/*@Test
+	@Test
 	@Transactional
 	public void test_comanda_ok() {
         Assertions.assertThat(servicio).isNotNull();
