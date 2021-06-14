@@ -50,7 +50,7 @@ public class ServiceTest {
 	 * Completa la definicion y el mapping
 	 * de la clase Usuaria a la tabla t_users
 	 */
-	/*@Test
+	@Test
 	public void test_mapping_usuaria() {
 		Usuaria elfo = em.find(Usuaria.class, "Doobey");
         Assertions.assertThat(elfo).isNotNull();
